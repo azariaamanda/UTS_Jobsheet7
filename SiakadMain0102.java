@@ -1,10 +1,6 @@
 import java.util.Scanner;
 public class SiakadMain0102 {
-<<<<<<< HEAD
-public static void main(String[] args) {
-=======
     public static void main(String[] args) {
->>>>>>> bfcbdc8960f15a9d7a146465a48677309530d570
     Scanner input0102 = new Scanner(System.in);
     int menu = 0;
 
@@ -15,7 +11,7 @@ public static void main(String[] args) {
     };
 
     MataKuliah0102[] mataKuliah = {
-        new MataKuliah0102("MK001", "PStruktur Data", 3),
+        new MataKuliah0102("MK001", "Struktur Data", 3),
         new MataKuliah0102("MK002", "Basis Data", 3),
         new MataKuliah0102("MK003", "Desain Web", 3),
     };
@@ -37,8 +33,8 @@ public static void main(String[] args) {
         System.out.println("5. Cari Mahasiswa Berdasarkan NIM");
         System.out.println("0. Keluar");
         
-        menu = input0102.nextInt();
         System.out.print("Pilih menu: ");
+        menu = input0102.nextInt();
         
         switch (menu) {
             case 1:
@@ -54,8 +50,7 @@ public static void main(String[] args) {
             case 3:
                 for (Penilaian0102 p : penilaian) {
                     p.hitungNiliaiAkhir();
-                    System.out.println("Mahasiswa: " + mahasiswa + " | Mata Kuliah: " + mataKuliah);
-                    p.tampil();
+                    System.out.println("Mahasiswa: " + p.mahasiswa.nama + " | Mata Kuliah: " + p.mataKuliah.namaMK + " | Nilai Akhir: " + p.nilaiAkhir);
                 }
                 break;
             case 4:
@@ -65,14 +60,15 @@ public static void main(String[] args) {
                 } 
                     Penilaian0102.sortingDSC(penilaian);
                     for (Penilaian0102 p : penilaian){
-                        System.out.println("Mahasiswa: " + p.mahasiswa.nama + " | Nilai Akhir: " + p.nilaiAkhir);
+                        System.out.println("Mahasiswa: " + p.mahasiswa.nama + " | Mata Kuliah: " + p.mataKuliah.namaMK + " | Nilai Akhir: " + p.nilaiAkhir);
                     }
             case 5:
-                System.out.println(mahasiswa.getBanyakMahasiswa());
-            
+                System.out.print("Masukkan Mahasiswa NIM yang dicari: ");
+                String cari = input0102.next();
+                Mahasiswa0102.SearchNim(mahasiswa, cari);
+                break;  
         }
         
     } while (menu != 0);
 }
-    
 }
