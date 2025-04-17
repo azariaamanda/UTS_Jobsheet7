@@ -67,6 +67,12 @@ public class SiakadMain0102 {
                 String cari = input0102.next();
                 Mahasiswa0102.SearchNim(mahasiswa, cari);
                 break;  
+            case 0:
+                System.out.println("Keluar dari Program.");
+                break;
+            default:
+                System.out.println("Menu tidak valid. Silakan coba lagi.");
+                break;
         }
         
     } while (menu != 0);
