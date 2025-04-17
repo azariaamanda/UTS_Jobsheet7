@@ -1,6 +1,10 @@
 import java.util.Scanner;
 public class SiakadMain0102 {
+<<<<<<< HEAD
 public static void main(String[] args) {
+=======
+    public static void main(String[] args) {
+>>>>>>> bfcbdc8960f15a9d7a146465a48677309530d570
     Scanner input0102 = new Scanner(System.in);
     int menu = 0;
 
@@ -55,6 +59,14 @@ public static void main(String[] args) {
                 }
                 break;
             case 4:
+                System.out.println("Urutkan Mahasiswa berdasarkan Nilai Akhir:");
+                for (int i =0; i< penilaian.length; i++){
+                    penilaian[i].hitungNiliaiAkhir();
+                } 
+                    Penilaian0102.sortingDSC(penilaian);
+                    for (Penilaian0102 p : penilaian){
+                        System.out.println("Mahasiswa: " + p.mahasiswa.nama + " | Nilai Akhir: " + p.nilaiAkhir);
+                    }
             case 5:
                 System.out.println(mahasiswa.getBanyakMahasiswa());
             
