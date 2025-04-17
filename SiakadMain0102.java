@@ -1,6 +1,5 @@
 import java.util.Scanner;
 public class SiakadMain0102 {
-    static Mahasiswa0102[] mahasiswa;
 public static void main(String[] args) {
     Scanner input0102 = new Scanner(System.in);
     int menu = 0;
@@ -51,12 +50,13 @@ public static void main(String[] args) {
             case 3:
                 for (Penilaian0102 p : penilaian) {
                     p.hitungNiliaiAkhir();
-                    System.out.println("Mahasiswa: " + p.mahasiswa.nama + " | Mata Kuliah: " + p.mataKuliah.namaMK);
+                    System.out.println("Mahasiswa: " + mahasiswa + " | Mata Kuliah: " + mataKuliah);
                     p.tampil();
                 }
                 break;
             case 4:
             case 5:
+                System.out.println(mahasiswa.getBanyakMahasiswa());
             
         }
         

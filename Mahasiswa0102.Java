@@ -3,7 +3,7 @@ public class Mahasiswa0102 {
     public String nama;
     public String prodi;
 
-     Mahasiswa0102(String nim, String nama, String prodi) {
+    Mahasiswa0102(String nim, String nama, String prodi) {
         this.nim = nim;
         this.nama = nama;
         this.prodi = prodi;
@@ -13,6 +13,6 @@ public class Mahasiswa0102 {
         System.out.println("NIM: " + nim);
         System.out.println("Nama: " + nama);
         System.out.println("Prodi: " + prodi);
-        
+
     }
 }
