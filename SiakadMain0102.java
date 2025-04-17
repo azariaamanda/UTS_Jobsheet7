@@ -1,10 +1,29 @@
 import java.util.Scanner;
 public class SiakadMain0102 {
+    static Mahasiswa0102[] mahasiswa;
 public static void main(String[] args) {
     Scanner input0102 = new Scanner(System.in);
     int menu = 0;
 
-    Mahasiswa0102[] mahasiswa = new Mahasiswa0102[3];
+    Mahasiswa0102[] mahasiswa = {
+        new Mahasiswa0102("22001", "Ali Rahman", "Informatika"),
+        new Mahasiswa0102("22002", "Budi Santoso", "Informatika"),
+        new Mahasiswa0102("22003", "Citra Dewi", "Sistem Informasi Bisnis"),
+    };
+
+    MataKuliah0102[] mataKuliah = {
+        new MataKuliah0102("MK001", "PStruktur Data", 3),
+        new MataKuliah0102("MK002", "Basis Data", 3),
+        new MataKuliah0102("MK003", "Desain Web", 3),
+    };
+
+    Penilaian0102[] penilaian = {
+        new Penilaian0102(mahasiswa[0], mataKuliah[0], 80, 85, 90),
+        new Penilaian0102(mahasiswa[0], mataKuliah[0], 60, 75, 70),
+        new Penilaian0102(mahasiswa[1], mataKuliah[1], 75, 70, 80),    
+        new Penilaian0102(mahasiswa[2], mataKuliah[2], 85, 90, 95),
+        new Penilaian0102(mahasiswa[2], mataKuliah[2], 80, 90, 65),
+    };
     
     do {
         System.out.println("====MENU SISTEM AKADEMIK====");
@@ -20,9 +39,22 @@ public static void main(String[] args) {
         
         switch (menu) {
             case 1:
-            
+                for (Mahasiswa0102 mhs : mahasiswa) {
+                    mhs.tampilMahasiswa();
+                }
+                break;
             case 2:
+                for (MataKuliah0102 mk : mataKuliah) {
+                    mk.tampilMataKuliah();
+                }
+                break;
             case 3:
+                for (Penilaian0102 p : penilaian) {
+                    p.hitungNiliaiAkhir();
+                    System.out.println("Mahasiswa: " + p.mahasiswa.nama + " | Mata Kuliah: " + p.mataKuliah.namaMK);
+                    p.tampil();
+                }
+                break;
             case 4:
             case 5:
             

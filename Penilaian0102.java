@@ -1,11 +1,14 @@
-public class Penilaian0102 {
-    
-    public double nilaiTugas;
-    public double nilaiUTS;
-    public double nilaiUAS;
-    public double nilaiAkhir;
+ class Penilaian0102 {
+    Mahasiswa0102 mahasiswa;
+    MataKuliah0102 mataKuliah;
+    double nilaiTugas;
+    double nilaiUTS;
+    double nilaiUAS;
+    double nilaiAkhir;
 
-    public Penilaian0102(double nilaiTugas, double nilaiUTS, double nilaiUAS){
+     Penilaian0102(Mahasiswa0102 mahasiswa, MataKuliah0102 mataKuliah, double nilaiTugas, double nilaiUTS, double nilaiUAS){
+        this.mahasiswa = mahasiswa;
+        this.mataKuliah = mataKuliah;
         this.nilaiTugas = nilaiTugas;
         this.nilaiUTS = nilaiUTS;
         this.nilaiUAS = nilaiUAS;

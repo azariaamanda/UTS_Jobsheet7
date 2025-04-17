@@ -8,7 +8,7 @@ public class MataKuliah0102 {
         this.namaMK = namaMK;
         this.sks = sks;
     }
-    public void tampil() {
+    public void tampilMataKuliah() {
         System.out.println("Kode: " + kodeMK + " | Nama: " + namaMK + " | SKS: " + sks);
     }
 }

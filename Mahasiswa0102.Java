@@ -13,5 +13,6 @@ public class Mahasiswa0102 {
         System.out.println("NIM: " + nim);
         System.out.println("Nama: " + nama);
         System.out.println("Prodi: " + prodi);
+        
     }
 }
