@@ -1,7 +1,7 @@
 public class Mahasiswa0102 {
-    public String nim;
-    public String nama;
-    public String prodi;
+    String nim;
+    String nama;
+    String prodi;
 
     Mahasiswa0102(String nim, String nama, String prodi) {
         this.nim = nim;
@@ -16,12 +16,12 @@ public class Mahasiswa0102 {
 
     }
 
-    public static  void SearchNim (Mahasiswa0102[] mahasiswa, String cari) {
-        boolean ketemu = false;
+    public static void SearchNim (Mahasiswa0102[] mahasiswa, String cari) { //sequensial search
+        boolean ketemu = false; 
         for (int i = 0; i < mahasiswa.length; i++) {
-            if (mahasiswa[i].nim.equalsIgnoreCase(cari)) {
+            if (mahasiswa[i].nim.equalsIgnoreCase(cari)) { 
                 mahasiswa[i].tampilMahasiswa();
-                ketemu = true;
+                ketemu = true; 
             }
         }
         if (!ketemu) {

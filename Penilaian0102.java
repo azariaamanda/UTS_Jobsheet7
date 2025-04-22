@@ -1,4 +1,4 @@
- class Penilaian0102 {
+public class Penilaian0102 {
     Mahasiswa0102 mahasiswa;
     MataKuliah0102 mataKuliah;
     double nilaiTugas;
@@ -17,13 +17,13 @@
         this.nilaiAkhir = (0.3 * this.nilaiTugas) + (0.3 * this.nilaiUTS) + (0.4 * this.nilaiUAS);
     }
       
-    public static void sortingDSC(Penilaian0102[]data){
-        for (int i = 0; i < data.length - 1; i++) {
-            for (int j = 0; j < data.length -1; j++) {
+    public static void sortingDSC(Penilaian0102[]data){ //buble sort descending
+        for (int i = 0; i < data.length - 1; i++) { 
+            for (int j = 0; j < data.length -1; j++) { 
                if (data[j].nilaiAkhir < data [j+1].nilaiAkhir) {
-                    Penilaian0102 temp = data [j];
-                    data [j] = data [j+1];
-                    data [j+1] = temp;
+                    Penilaian0102 temp = data [j]; 
+                    data [j] = data [j+1]; 
+                    data [j+1] = temp; 
                } 
             }
         }

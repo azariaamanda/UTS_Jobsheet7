@@ -4,19 +4,21 @@ public class SiakadMain0102 {
     Scanner input0102 = new Scanner(System.in);
     int menu = 0;
 
-    Mahasiswa0102[] mahasiswa = {
+    Mahasiswa0102[] mahasiswa = { //deklarasi array mahasiswa
         new Mahasiswa0102("22001", "Ali Rahman", "Informatika"),
         new Mahasiswa0102("22002", "Budi Santoso", "Informatika"),
         new Mahasiswa0102("22003", "Citra Dewi", "Sistem Informasi Bisnis"),
     };
 
-    MataKuliah0102[] mataKuliah = {
+    MataKuliah0102[] mataKuliah = { //deklarasi array mata kuliah
         new MataKuliah0102("MK001", "Struktur Data", 3),
-        new MataKuliah0102("MK002", "Basis Data", 3),
-        new MataKuliah0102("MK003", "Desain Web", 3),
+        new MataKuliah0102("MK002", "Basis Data", 2),
+        new MataKuliah0102("MK003", "Desain Web", 4),
+        new MataKuliah0102("MK004", "Pemrograman Berbasis Objek", 5),
+        new MataKuliah0102("MK005", "Jaringan Komputer", 6),
     };
 
-    Penilaian0102[] penilaian = {
+    Penilaian0102[] penilaian = { //deklarasi array penilaian
         new Penilaian0102(mahasiswa[0], mataKuliah[0], 80, 85, 90),
         new Penilaian0102(mahasiswa[0], mataKuliah[0], 60, 75, 70),
         new Penilaian0102(mahasiswa[1], mataKuliah[1], 75, 70, 80),    
@@ -31,6 +33,7 @@ public class SiakadMain0102 {
         System.out.println("3. Tampilkan Data Penilaian");
         System.out.println("4. Urutkan Mahasiswa berdasarkan Nilai Akhir");
         System.out.println("5. Cari Mahasiswa Berdasarkan NIM");
+        System.out.println("6. Urutan Mata Kuliah Berdasarkan SKS");
         System.out.println("0. Keluar");
         
         System.out.print("Pilih menu: ");
@@ -49,8 +52,8 @@ public class SiakadMain0102 {
                 break;
             case 3:
                 for (Penilaian0102 p : penilaian) {
-                    p.hitungNiliaiAkhir();
-                    System.out.println("Mahasiswa: " + p.mahasiswa.nama + " | Mata Kuliah: " + p.mataKuliah.namaMK + " | Nilai Akhir: " + p.nilaiAkhir);
+                    p.hitungNiliaiAkhir(); 
+                    System.out.println("Mahasiswa: " + p.mahasiswa.nama + " | Mata Kuliah: " + p.mataKuliah.namaMK + " | Nilai Akhir: " + p.nilaiAkhir); //ambil nama dari objek mahasiswa di dalam objek penilaian
                 }
                 break;
             case 4:
@@ -62,19 +65,25 @@ public class SiakadMain0102 {
                     for (Penilaian0102 p : penilaian){
                         System.out.println("Mahasiswa: " + p.mahasiswa.nama + " | Mata Kuliah: " + p.mataKuliah.namaMK + " | Nilai Akhir: " + p.nilaiAkhir);
                     }
+                break;
             case 5:
                 System.out.print("Masukkan Mahasiswa NIM yang dicari: ");
                 String cari = input0102.next();
                 Mahasiswa0102.SearchNim(mahasiswa, cari);
-                break;  
+                break; 
+            case 6:
+                System.out.println("Urutkan Mata Kuliah berdasarkan SKS:");
+                MataKuliah0102.sortingMK(mataKuliah); 
+                for (MataKuliah0102 mk : mataKuliah) {
+                    mk.tampilMataKuliah(); 
+                }
+                break;
             case 0:
                 System.out.println("Keluar dari Program.");
                 break;
             default:
-                System.out.println("Menu tidak valid. Silakan coba lagi.");
-                break;
-        }
-        
-    } while (menu != 0);
+            System.out.println("Menu tidak valid. Silakan coba lagi.");
+        }   
+    } while (menu != 0); 
 }
 }
